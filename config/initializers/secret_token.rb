@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-LoLCritique::Application.config.secret_token = '2e424090af2626783595f719cfd3f66ced1a1b81906b751450c94448fbf31fe3c1b3d3b172dfd74a9cd7fba98c69192ed3ce172d2f4803e2a121a372e0921fdd'
+LoLCritique::Application.config.secret_token = '8ec795156b195a758a25de7c4de09bf86f3a78b33d95fd80e674ba1c9c109caef2127cbe5458fb1d2521ee4f5554e173eb76e5a1625b27fa295827578052d165'
