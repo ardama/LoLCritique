@@ -11,7 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130205043659) do
+ActiveRecord::Schema.define(:version => 20130205082731) do
+
+  create_table "critiques", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "video_id"
+    t.integer  "rating"
+    t.boolean  "helpful"
+    t.string   "content"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "roles", :force => true do |t|
     t.string   "name"
@@ -38,6 +48,8 @@ ActiveRecord::Schema.define(:version => 20130205043659) do
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
     t.string   "name"
+    t.integer  "credits"
+    t.string   "badges"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
@@ -49,5 +61,16 @@ ActiveRecord::Schema.define(:version => 20130205043659) do
   end
 
   add_index "users_roles", ["user_id", "role_id"], :name => "index_users_roles_on_user_id_and_role_id"
+
+  create_table "videos", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "rating"
+    t.string   "champ"
+    t.string   "focus"
+    t.string   "position"
+    t.string   "phase"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
 end
