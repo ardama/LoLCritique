@@ -65,11 +65,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#111111', end
 	float: right;
 //	color: #F77F00;
 	color: $white;
-	text-shadow: 0px 1px 0px $white;
+//	text-shadow: 0px 1px 0px $white;
 }
 .navbar .nav li a:hover {
 	color: $white;
-	text-shadow: 0px -1px 0px $white;
+	padding-top: 7px;
+//	text-shadow: 0px -1px 0px $white;
 }
 
 .navbar .brand {
