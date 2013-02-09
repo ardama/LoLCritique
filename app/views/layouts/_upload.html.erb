@@ -1,6 +1,35 @@
-<a href="#">
-	<button class="btn btn-warning btn-large">Upload New Video<i class="icon-plus icon-white"></i>
-	</button>
+<a href="#upload-modal" role="button" class="btn btn-warning btn-large" data-toggle="modal">	
+	Link New Video<i class="icon-plus icon-white"></i>
 </a>
 <%= render 'layouts/filters' %>
 <%= render 'layouts/thumbnails' %>
+
+<div class="modal hide fade" id= "upload-modal">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h3>Link New Video</h3>
+  </div>
+		<%= form_for ([@user, @user.videos.build]) do |f| %>
+			<div class="modal-body">
+				<input type="text" style="width:400px" id="trip_name" name="link" 
+					 placeholder = "What is the URL of the YouTube video?"
+					 /><br />				 
+				<select class="upload-dropdown-1" name="champ">
+					<option>Select Champion</option>
+				</select>
+				<select class="upload-dropdown-2" name="position">
+					<option>Select Position</option>
+				</select>
+				<select class="upload-dropdown-3" nane="phase">
+					<option>Select Game Phase</option>
+				</select>
+				<select class="upload-dropdown-4" name="focus">
+					<option>Select Focus Points</option>
+				</select>
+			</div>
+			<div class="modal-footer">
+				<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+				<button type="submit" class="btn btn-primary">Link</button>
+			</div>
+		<% end %>
+</div>
