@@ -50,7 +50,7 @@
   	</div>
    	<div class="row-fluid">
   		<div class="span12">
-   			<%= render 'layouts/upload' %>
+   			<%= render 'layouts/upload' unless @user.nil? %>
   		</div>
   	</div>    
   </div>
