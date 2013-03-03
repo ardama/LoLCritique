@@ -7,4 +7,13 @@ LoLCritique::Application.routes.draw do
   resources :users do
     resources :videos
   end
+  resources :videos
+
+  resources :users do
+    resources :critiques
+  end
+  resources :critiques
+  
+  match '/videos/:id/show' => 'videos#show'
+  match '/critiques/:id/show' => 'critiques#show'
 end

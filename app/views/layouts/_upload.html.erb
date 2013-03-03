@@ -11,25 +11,18 @@
   </div>
 		<%= form_for ([@user, @user.videos.build]) do |f| %>
 			<div class="modal-body">
-				<input type="text" style="width:400px" id="trip_name" name="link" 
-					 placeholder = "What is the URL of the YouTube video?"
-					 /><br />				 
-				<select class="upload-dropdown-1" name="champ">
-					<option>Select Champion</option>
-				</select>
-				<select class="upload-dropdown-2" name="position">
-					<option>Select Position</option>
-				</select>
-				<select class="upload-dropdown-3" nane="phase">
-					<option>Select Game Phase</option>
-				</select>
-				<select class="upload-dropdown-4" name="focus">
-					<option>Select Focus Points</option>
-				</select>
+				<%= f.text_field :link, :placeholder => "What is the URL of the YouTube video?", :style => "width:400px", :required => true%>
+				<br />	
+				<%= f.text_area :description, :placeholder => "Enter a description for your video (250 character limit)", :style => "width:400px; height:125px"%>	
+				<br />
+				<%= f.select(:champ, [["-- Select Champion --", "None"]], {}, {:class => "filter-dropdown-1"})%>	
+				<%= f.select(:position, [["-- Select Position --", "None"]], {}, {:class => "filter-dropdown-2"})%>	
+				<%= f.select(:phase, [["-- Select Game Phase --", "None"]], {}, {:class => "filter-dropdown-3"})%>	
+				<%= f.select(:focus, [], {}, {:class => "filter-dropdown-4", :multiple => 'multiple'})%>
 			</div>
 			<div class="modal-footer">
 				<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-				<button type="submit" class="btn btn-primary">Link</button>
+				<%= f.submit "Link", :class => "btn btn-warning" %>
 			</div>
 		<% end %>
 </div>

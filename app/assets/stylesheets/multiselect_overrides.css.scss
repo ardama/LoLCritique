@@ -1,0 +1,61 @@
+$themeColorMain: #f48b22;
+$themeColorSecondary: #f4a453;
+$white: #ffffff;
+$black: #111111;
+.ui-widget {
+	font-family: verdana,arial, helvetica, sans-serif;
+}
+.ui-multiselect-checkboxes label input {
+	margin-right: 4px;
+	margin-top: 0px;
+	top: -1px;
+}
+.ui-widget-content {
+	color: $black;
+}
+.ui-multiselect-single .ui-multiselect-checkboxes label {
+	margin-bottom: 0px;
+}
+.ui-widget-content .ui-state-hover {
+	font-weight: normal;
+	color: $themeColorMain;
+	border-color: $white;
+	background: #ddd;
+	border-radius: 0px;
+}
+.ui-widget-content .ui-state-active {
+	font-weight: normal;
+	color: $themeColorMain;
+	border-color: $white;
+	background: none;
+}
+.ui-multiselect-menu {
+	background: none;
+	background-color: $white;
+	border-radius: 0;
+	border-color: $white;
+	padding: 0px;
+}
+.ui-multiselect {
+	background-image: none;
+	background-color: $white;
+	color: $black;
+	border: none;
+	border-radius: 0px;
+	padding: 4px 4px 4px 6px;
+	margin: 2px;
+	font-weight:normal;
+	border-radius: 2px;
+	border: 1px solid rgb(204,204,204);
+}
+.ui-widget-header .ui-state-active{
+	color: #333333;
+	border-color: #333333;
+}
+.ui-widget-header .ui-state-default{
+	color: #333333;
+	border-color: #333333;
+}
+.ui-multiselect span.ui-icon {
+	margin-top: 2px;
+}

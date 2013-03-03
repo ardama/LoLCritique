@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130205082731) do
+ActiveRecord::Schema.define(:version => 20130303011055) do
 
   create_table "critiques", :force => true do |t|
     t.integer  "user_id"
@@ -19,8 +19,9 @@ ActiveRecord::Schema.define(:version => 20130205082731) do
     t.integer  "rating"
     t.boolean  "helpful"
     t.string   "content"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
+    t.text     "comment",    :limit => 1000
   end
 
   create_table "roles", :force => true do |t|
@@ -69,8 +70,10 @@ ActiveRecord::Schema.define(:version => 20130205082731) do
     t.string   "focus"
     t.string   "position"
     t.string   "phase"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
+    t.string   "link"
+    t.text     "description", :limit => 250
   end
 
 end

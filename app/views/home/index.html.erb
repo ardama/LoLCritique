@@ -1,16 +1,18 @@
 <% content_for :head do %>
 	<%= javascript_include_tag "homepage.js" %>
+  <%= javascript_include_tag "chosen.jquery.js" %>
+  <%= javascript_include_tag "jquery.multiselect.js" %>
 <% end %>
 
 
-<!----- TAB BUTTONS ------->
+<!-- TAB BUTTONS -->
 <ul class="nav nav-tabs" id="homepage-tabs">
   <li><a href="#tab_1" data-toggle="tab">Watch Videos</a></li>
   <li class="active" id="homepage-middle-tab"><a href="#tab_2" data-toggle="tab">Critique Videos</a></li>
   <li><a href="#tab_3" data-toggle="tab">Upload Videos</a></li>
 </ul>
 
-<!----- TAB CONTENT ------>
+<!-- TAB CONTENT -->
 <div class="tab-content homepage-tab-content">
 
 		<!--LEFT TAB-->
@@ -31,7 +33,7 @@
   <div class="tab-pane active" id="tab_2">
     <div class="row-fluid">
   		<div class="span12 help-text">
-				<p id="help-text-2">Earn credits by offering your advice on uploaded videos.</p>
+				<p id="help-text-2">Help others by analyzing their videos and giving your advice.</p>
   		</div>
   	</div>
    	<div class="row-fluid">
@@ -45,12 +47,17 @@
   <div class="tab-pane" id="tab_3">
    	<div class="row-fluid">
   		<div class="span12 help-text">
-  			<p id="help-text-3">Spend your credits by uploading your own gameplay videos.</p>
+        <% if @user.nil?%>
+  			 <p id="help-text-3">Login or Sign Up to begin uploading your own videos.</p>
+        <% else %>
+          <p id="help-text-3">View your uploaded videos or add new ones for others to critique.</p>
+        <%end%>
   		</div>
   	</div>
    	<div class="row-fluid">
   		<div class="span12">
    			<%= render 'layouts/upload' unless @user.nil? %>
+        <%= render 'layouts/upload2' if @user.nil? %>
   		</div>
   	</div>    
   </div>

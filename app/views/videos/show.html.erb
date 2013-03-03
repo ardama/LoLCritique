@@ -1,0 +1,57 @@
+<% content_for :head do %>
+	<%= javascript_include_tag "video.js" %>
+<% end %>
+
+<div class="span8" id="video-left-col">
+	<div id="video-container">
+		<div id="video-player">
+			<iframe width='100%' height="100%" src="<%= @videoPath %>" frameborder="0" allowfullscreen></iframe>
+		</div>
+		<div id="video-info">
+			<table id="table-info">
+				<tr>
+					<td class="table-attribute">Champion:</td>
+					<td class="table-value"><%= @video.champ %></td>
+				</tr>
+				<tr>
+					<td class="table-attribute">Phase:</td>
+					<td class="table-value"><%= @video.phase %></td>
+				</tr>
+				<tr>
+					<td class="table-attribute">Position:</td>
+					<td class="table-value"><%= @video.position %></td>
+				</tr>
+				<tr>
+					<td class="table-attribute">Focus Points:</td>
+					<td class="table-value"><% @focusPoints.each do |i| %><%= i+' ' %><% end %></td>
+				</tr>
+			</table>
+			<table id="table-description">
+				<tr>
+					<td class="table-attribute">Description:</td>
+					<td class="table-value"><%= @video.description %></td>
+				</tr>
+			</table>
+			<table class="table-rating">
+				<tr>
+				</tr>
+				<tr>
+				</tr>
+				<tr>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<div id="comments-container">
+		<%= @video.critiques %>
+	</div>
+</div>
+<div class="span4" id="video-right-col">
+	<div id="critique-container">
+		<%= form_for ([@user, @user.critiques.build]), :remote => true do |f| %>
+		<%= f.text_area :comment, :placeholder => "Write your Critique (1000 Character Limit)"%>
+		<%= button_to "Submit Critique", :class => "btn btn-warning", :id => 'submit-critique' %>
+		<%= f.submit "Submit Critique", :class => "btn btn-warning", :id => "submit-critique"%>
+		<% end %>
+	</div>
+</div>

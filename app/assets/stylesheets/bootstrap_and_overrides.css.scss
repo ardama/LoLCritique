@@ -1,7 +1,4 @@
-$themeColorMain: #f48b22;
-$themeColorSecondary: #f4a453;
-$white: #ffffff;
-$black: #111111;
+@import "variables";
 @import "bootstrap";
 
 //// MAIN /////////////////////
@@ -165,6 +162,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4a453', end
 	//box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);	
 	//background: #f6f6f6;
 	background: $black;
+	margin-bottom: 15px;
 }
 .filter-dropdowns {
 	padding-bottom: 10px;
@@ -203,9 +201,6 @@ background: -o-linear-gradient(top, #f4a453 0%,#f48b22 99%);
 background: -ms-linear-gradient(top, #f4a453 0%,#f48b22 99%);
 background: linear-gradient(to bottom, #f4a453 0%,#f48b22 99%);
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4a453', endColorstr='#f48b22',GradientType=0 );
-
-	margin-top: 15px;
-
 }
 
 .btn-warning:hover {
@@ -225,8 +220,40 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f48b22', end
 }
 
 
+.upload-tab-form h3 {
+	color: $themeColorMain;
+	padding-left:0px;
+}
+.upload-tab-form {
+	color: $white;
+}
+.upload-tab-form input:focus {
+	box-shadow: 0px 0px 3px $themeColorMain;
+	border: solid 1px $themeColorMain;
+}
 
 
+//// MODAL //////////////////
+.modal {
+	//background-color: #444444;
+	//border:none;
+
+}
+.modal-header {
+	//background-color: #444444;
+	//border:none;
+	color: $themeColorMain;
+	//border-radius: 4px;
+}
+.modal-body {
+	//background-color: #222222;
+	border:none;
+}
+.modal-footer {
+	//background-color: #222222;
+	border:none;
+	box-shadow: none;
+}
 
 
 
