@@ -50,7 +50,7 @@
 	<div id="critique-container">
 		<%= form_for ([@user, @user.critiques.build]), :remote => true do |f| %>
 		<%= f.text_area :comment, :placeholder => "Write your Critique (1000 Character Limit)"%>
-		<%= button_to "Submit Critique", :class => "btn btn-warning", :id => 'submit-critique' %>
+		<%#= button_to "Submit Critique", {}, {:class => "btn btn-warning", :id => 'submit-critique' }%>
 		<%= f.submit "Submit Critique", :class => "btn btn-warning", :id => "submit-critique"%>
 		<% end %>
 	</div>

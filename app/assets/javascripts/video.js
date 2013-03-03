@@ -22,23 +22,7 @@ $(document).ready( function() {
 	//sets height of critique textarea to match video player
 	$('#critique_comment').height($('#video-player').height());
 
-	$('#submit-critique').click(function(){
-		$('#new_critique').submit(function(){
-			var valuesToSubmit = $(this).serialize();
-			$.ajax({
-				url: $(this).attr('action'),
-				data: valuesToSubmit,
-				dataType: "JSON",
-				type: 'POST'
-			}).success(function(json){
-
-			});
-			return false;
-		});
-
-		alert('Critique Submitted!');
-		$('#critique_comment').val("");
-	});
+	
 });
 
 window.onresize = function() {

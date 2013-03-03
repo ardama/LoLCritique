@@ -4,7 +4,8 @@ class CritiquesController < ApplicationController
   	user_id = params[:critique][:user_id]
   	video_id = session[:video_id]
   	@critique = current_user.critiques.create(:comment => comment, :user_id => user_id, :video_id => video_id)
-  	redirect_to 'videos/'+video_id.to_s+'/show'
+  	@video = Video.find(video_id)
+  	#redirect_to 'videos/'+video_id.to_s+'/show'
 
   end
 
