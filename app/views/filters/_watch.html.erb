@@ -1,0 +1,20 @@
+<div class="row-fluid">
+	<div class="span12 filter-dropdowns">
+		<%= form_tag videos_path, :method => 'get', :id => "video-filters" do %>
+			<%= hidden_field_tag :tab, "watch" %>
+			<table>
+				<tr>
+					<td class="submit-cell">
+						<%= submit_tag "Filter Videos", :name => nil, :class => 'btn btn-warning' %>
+					</td>
+				<td class="filter-cell">
+					<%= select_tag(:champ, options_for_select({"-- Select Champion --" => "None"}), {:class => "filter-dropdown-1", :id => "champ1"})%>	
+					<%= select_tag(:position, options_for_select({"-- Select Position --" => "None"}), {:class => "filter-dropdown-2", :id => "position1"})%>	
+					<%= select_tag(:phase, options_for_select({"-- Select Phase --" => "None"}), {:class => "filter-dropdown-3", :id => "phase1"})%>	
+					<%= select_tag(:focus, options_for_select({}), {:class => "filter-dropdown-4", :multiple => 'multiple', :id => "focus1", :name => "focus[]"})%> 
+					</td>
+				</tr>
+			</table>
+		<% end %>
+	</div>
+</div>

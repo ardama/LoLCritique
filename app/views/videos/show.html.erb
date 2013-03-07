@@ -28,12 +28,13 @@
 			</table>
 			<table id="table-description">
 				<tr>
-					<td class="table-attribute">Description:</td>
+					<td class="table-attribute" style="width:1px">Description:</td>
 					<td class="table-value"><%= @video.description %></td>
 				</tr>
 			</table>
 			<table class="table-rating">
 				<tr>
+					<img 
 				</tr>
 				<tr>
 				</tr>
@@ -42,16 +43,39 @@
 			</table>
 		</div>
 	</div>
+	<h4>Critiques</h4>
 	<div id="comments-container">
-		<%= @video.critiques %>
+		<ul class="media-list" id="comments-list">
+		<% if @video.critiques.length > 0 %>
+		<% @video.critiques.each do |c| %>
+			<li class='media comment'>
+				<a class="pull-left">
+					<img class="media-object" src='/app/assets/images/media-icon.png'>
+				</a>
+				<div class="media-body">
+					<div class="media-heading"><h4><%=User.find(c.user_id).name %></h4></div>
+					<%= c.comment %>
+				</div>
+			</li>
+		<% end %>
+		<% else %>
+			<p class='video-message'>No critiques yet. Be the first!</p>
+		<% end %>
+		</ul>
 	</div>
 </div>
 <div class="span4" id="video-right-col">
+	<h4>Write a Critique</h4>
 	<div id="critique-container">
-		<%= form_for ([@user, @user.critiques.build]), :remote => true do |f| %>
-		<%= f.text_area :comment, :placeholder => "Write your Critique (1000 Character Limit)"%>
-		<%#= button_to "Submit Critique", {}, {:class => "btn btn-warning", :id => 'submit-critique' }%>
-		<%= f.submit "Submit Critique", :class => "btn btn-warning", :id => "submit-critique"%>
+		<% unless @user.nil?%>
+			<%= form_for ([@user, @user.critiques.build]), :remote => true do |f| %>
+			<%= f.text_area :comment, :placeholder => "What's your advice? (1000 Character Limit)"%>
+			<%#= button_to "Submit Critique", {}, {:class => "btn btn-warning", :id => 'submit-critique' }%>
+			<%= f.submit "Submit Critique", :class => "btn btn-warning", :id => "submit-critique"%>
+			<% end %>
+		<% else %>
+			<p class='video-message'>Please Sign In to leave a Critique</p>
+		<%= render 'devise/shared/links' %>
 		<% end %>
 	</div>
 </div>

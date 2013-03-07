@@ -1,3 +1,9 @@
 alert('Critique Submitted!');
 $('#critique_comment').val("");
-$('#comments-container').html("<%= @video.critiques %>");
+$('#comments-list').append(
+	"<li class='media comment'>" +
+	"<img class='pull-left media-object' data-src='media-icon.png'>" +
+	"<div class='media-body'>" +
+	"<div class='media-heading'><%=User.find(@critique.user_id).name %></div>" +
+	"<%= @critique.comment %></div></li>"
+	);

@@ -1,6 +1,7 @@
 	<h4>Filter Videos</h4>
 	<div class="row-fluid">
 		<div class="span12 filter-dropdowns">
+			<%#= form_tag({:action => 'filter'}, :method => 'get') do %>
 			<select data-placeholder=""class=" filter-dropdown-1">
 				<option value="None">-- Select Champion --</option>
 			</select>
@@ -13,5 +14,20 @@
 
 			<select class=" filter-dropdown-4" multiple="multiple">
 			</select>
+
+			<%#= submit_tag "Filter Videos",:class => "btn btn-warning", :id => "filter-button" %>
+			<%# end %>
+
+
+			<%= form_tag videos_path, :method => 'get', :id => "video-filters" do %>
+				<%#= text_field_tag :champ, params[:champ], :id => 'search_field' %>
+
+				<%= select_tag(:champ, options_for_select({"-- Select Champion --" => "None"}), {:class => "filter-dropdown-1"})%>	
+				<%= select_tag(:position, options_for_select({"-- Select Position --" => "None"}), {:class => "filter-dropdown-2"})%>	
+				<%= select_tag(:phase, options_for_select({"-- Select Game Phase --" => "None"}), {:class => "filter-dropdown-3", :id => "phase1"})%>	
+				<%= select_tag(:focus, options_for_select({}), {:class => "filter-dropdown-4", :multiple => 'multiple'})%>
+				<%= submit_tag "Search", :name => nil %> 
+			<% end %>
+			<div id="videos"> Videos: <%= render 'layouts/videos' %> <br /> </div>
 		</div>
 	</div>

@@ -36,7 +36,7 @@ $(document).ready( function() {
 	var focusArray = new Array(
 		"Last Hitting", "Zoning", "Harassing", "Warding", "Item Builds", "Invading", "Ganking", "Roaming", 
 		"Map Awareness", "Teamfighting", "Positioning", "Taking Objectives", "Initiating", "Tanking",
-		"Kiting", "Focusing", "Counterpicking/Matchups"
+		"Kiting", "Focusing", "Matchups"
 		);
 
 	populateOptions('.filter-dropdown-1',champArray);
@@ -44,15 +44,28 @@ $(document).ready( function() {
 	populateOptions('.filter-dropdown-3',phaseArray);
 	populateOptions('.filter-dropdown-4',focusArray);
 
-	$('.filter-dropdown-1').multiselect({header:false, multiple:false, selectedList:1});	
-	$('.filter-dropdown-2').multiselect({header:false, multiple:false, selectedList:1, height:'auto'});	
-	$('.filter-dropdown-3').multiselect({header:false, multiple:false, selectedList:1, height:'auto'});	
-	$('.filter-dropdown-4').multiselect({header:false, selectedList: 1, noneSelectedText: "-- Select Focus Points --"});	
+	$('.filter-dropdown-1').multiselect({minWidth:'auto', header:false, multiple:false, selectedList:1});	
+	$('.filter-dropdown-2').multiselect({minWidth:'auto', header:false, multiple:false, selectedList:1, height:'auto'});	
+	$('.filter-dropdown-3').multiselect({minWidth:'auto', header:false, multiple:false, selectedList:1, height:'auto'});	
+	$('.filter-dropdown-4').multiselect({minWidth:'auto', header:false, selectedList: 1, noneSelectedText: "-- Select Focus Points --"});	
 
 //	$('.filter-dropdown-1').chosen({allow_single_deselect:true});
 //	$('.filter-dropdown-2').chosen({allow_single_deselect:true, disable_search:true});
 //	$('.filter-dropdown-3').chosen({allow_single_deselect:true, disable_search:true});
 //	$('.filter-dropdown-4').chosen({allow_single_deselect:true});
+
+
+
+	$("#video-filters").submit(function() {
+		    $.get(this.action, $(this).serialize(), null, "script");
+		    return false;
+		  });
+	$('.filter-dropdown-1').bind('multiselectclose', function(event, ui){
+		$.getScript('app/assets/views/layouts/index.js.erb');
+//		alert('here');
+		return false;
+	});
+
 });
 
 

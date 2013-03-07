@@ -167,7 +167,21 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4a453', end
 .filter-dropdowns {
 	padding-bottom: 10px;
 }
-
+.filter-dropdowns select {
+	width:170px;
+}
+.filter-dropdowns button {
+	font-size: 12px;
+	float:left;
+}
+.filter-dropdowns input {
+	margin:2px;
+	width: 182px;
+	float:left;
+}
+.submit-cell {
+	vertical-align:top;
+}
 //// THUMBNAILS ////////////////
 .thumbnails {
 	overflow: hidden;

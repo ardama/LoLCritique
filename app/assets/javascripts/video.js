@@ -17,10 +17,10 @@ $(document).ready( function() {
 
 	//sets height of critique container to match video container
 	height = $('#video-container').height() + $('#video-info').height();
-	$('#critique-container').height(height-20);
+	$('#critique-container').height(height-60);
 
 	//sets height of critique textarea to match video player
-	$('#critique_comment').height($('#video-player').height());
+	$('#critique_comment').height(height-110);
 
 	
 });
@@ -37,4 +37,12 @@ window.onresize = function() {
 
 	width = $('#critique-container').width();
 	$('#critique_comment').width(width-14);
+	
+	//sets height of critique container to match video container
+	height = $('#video-container').height() + $('#video-info').height();
+	$('#critique-container').height(height-60);
+
+	//sets height of critique textarea to match video player
+	$('#critique_comment').height(height-110);
+	
 };

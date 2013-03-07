@@ -1,8 +1,11 @@
 <a href="#upload-modal" role="button" class="btn btn-warning btn-large" data-toggle="modal">	
 	Link New Video<i class="icon-plus icon-white"></i>
 </a>
-<%= render 'layouts/filters' %>
-<%= render 'layouts/thumbnails' %>
+
+<%#= render 'filters/upload' %>
+<h4>My Videos</h4>
+<div id="upload-thumbnails"><%= render 'thumbnails/upload' %></div>
+
 
 <div class="modal hide fade" id= "upload-modal">
   <div class="modal-header">
@@ -17,7 +20,7 @@
 				<br />
 				<%= f.select(:champ, [["-- Select Champion --", "None"]], {}, {:class => "filter-dropdown-1"})%>	
 				<%= f.select(:position, [["-- Select Position --", "None"]], {}, {:class => "filter-dropdown-2"})%>	
-				<%= f.select(:phase, [["-- Select Game Phase --", "None"]], {}, {:class => "filter-dropdown-3"})%>	
+				<%= f.select(:phase, [["-- Select Phase --", "None"]], {}, {:class => "filter-dropdown-3"})%>	
 				<%= f.select(:focus, [], {}, {:class => "filter-dropdown-4", :multiple => 'multiple'})%>
 			</div>
 			<div class="modal-footer">

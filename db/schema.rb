@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130303011055) do
+ActiveRecord::Schema.define(:version => 20130304062930) do
 
   create_table "critiques", :force => true do |t|
     t.integer  "user_id"
@@ -74,6 +74,7 @@ ActiveRecord::Schema.define(:version => 20130303011055) do
     t.datetime "updated_at",                 :null => false
     t.string   "link"
     t.text     "description", :limit => 250
+    t.string   "path"
   end
 
 end
