@@ -43,14 +43,16 @@
 			</table>
 		</div>
 	</div>
-	<h4>Critiques</h4>
+	<div id="video-left-header">
+		<h4>Critiques</h4>
+	</div>
 	<div id="comments-container">
 		<ul class="media-list" id="comments-list">
 		<% if @video.critiques.length > 0 %>
 		<% @video.critiques.each do |c| %>
 			<li class='media comment'>
 				<a class="pull-left">
-					<img class="media-object" src='/app/assets/images/media-icon.png'>
+					<img class="media-object" src='/assets/C_icon_2.ico'>
 				</a>
 				<div class="media-body">
 					<div class="media-heading"><h4><%=User.find(c.user_id).name %></h4></div>
@@ -65,7 +67,9 @@
 	</div>
 </div>
 <div class="span4" id="video-right-col">
-	<h4>Write a Critique</h4>
+	<div id="video-right-header">
+		<h4>Write a Critique</h4>
+	</div>
 	<div id="critique-container">
 		<% unless @user.nil?%>
 			<%= form_for ([@user, @user.critiques.build]), :remote => true do |f| %>

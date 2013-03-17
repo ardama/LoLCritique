@@ -1,7 +1,5 @@
-$themeColorMain: #f48b22;
-$themeColorSecondary: #f4a453;
-$white: #ffffff;
-$black: #111111;
+@import "variables";
+
 .ui-widget {
 	font-family: verdana,arial, helvetica, sans-serif;
 }
@@ -18,14 +16,14 @@ $black: #111111;
 }
 .ui-widget-content .ui-state-hover {
 	font-weight: normal;
-	color: $themeColorMain;
+	color: $themeColorSecondary;
 	border-color: $white;
 	background: #ddd;
 	border-radius: 0px;
 }
 .ui-widget-content .ui-state-active {
 	font-weight: normal;
-	color: $themeColorMain;
+	color: $themeColorSecondary;
 	border-color: $white;
 	background: none;
 }

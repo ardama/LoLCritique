@@ -4,14 +4,14 @@
 //// MAIN /////////////////////
 html {
 	height: 100%;
-	//background-color:#f6f6f6;
-	background-image: url(http://cdn.medleyweb.com/wp-content/uploads/2012/06/Seamless-Web-Background-Patterns-for-Your-Site-29.jpg)
+	//background-color:#000;
+	//background-image: url(http://cdn.medleyweb.com/wp-content/uploads/2012/06/Seamless-Web-Background-Patterns-for-Your-Site-29.jpg)
 }
 body { 
 	padding-top: 60px;
-	//background-color:#f6f6f6;
+	//background-color:#666666;
 	//height: 100%;
-	background-image: url(http://cdn.medleyweb.com/wp-content/uploads/2012/06/Seamless-Web-Background-Patterns-for-Your-Site-29.jpg)
+	background-image: url(/assets/green-fibers/green-fibers.png)
 }
 #main {
 	//background-color:#f6f6f6;
@@ -41,7 +41,7 @@ body {
 
 }
 .navbar-inner {
-
+/*
 background: #111111;
 background: -moz-linear-gradient(-45deg, #111111 0%, #262626 69%, #f48b22 69%, #f4a453 100%);
 background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#111111), color-stop(69%,#262626), color-stop(69%,#f48b22), color-stop(100%,#f4a453));
@@ -50,7 +50,16 @@ background: -o-linear-gradient(-45deg, #111111 0%,#262626 69%,#f48b22 69%,#f4a45
 background: -ms-linear-gradient(-45deg, #111111 0%,#262626 69%,#f48b22 69%,#f4a453 100%);
 background: linear-gradient(135deg, #111111 0%,#262626 69%,#f48b22 69%,#f4a453 100%);
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#111111', endColorstr='#f4a453',GradientType=1 );
-	
+*/
+
+background: #111111;
+background: -moz-linear-gradient(-45deg, #111111 0%, #262626 50%, #3b5558 50%, #437175 100%);
+background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#111111), color-stop(50%,#262626), color-stop(50%,#3b5558), color-stop(100%,#437175));
+background: -webkit-linear-gradient(-45deg, #111111 0%,#262626 50%,#3b5558 50%,#437175 100%);
+background: -o-linear-gradient(-45deg, #111111 0%,#262626 50%,#3b5558 50%,#437175 100%);
+background: -ms-linear-gradient(-45deg, #111111 0%,#262626 50%,#3b5558 50%,#437175 100%);
+background: linear-gradient(135deg, #111111 0%,#262626 50%,#3b5558 50%,#437175 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#111111', endColorstr='#437175',GradientType=1 );
 	border:none;
 }
 .navbar .nav {
@@ -62,18 +71,19 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#111111', end
 	float: right;
 //	color: #F77F00;
 	color: $white;
-//	text-shadow: 0px 1px 0px $white;
+//	text-shadow: 0px -1px 0px $white;
 }
 .navbar .nav li a:hover {
 	color: $white;
-	padding-top: 7px;
-//	text-shadow: 0px -1px 0px $white;
+	padding-top: 10px;
+//	text-shadow: 0px 1px 0px $white;
+	background-color: $themeColorMain
 }
 
 .navbar .brand {
 	color: $white;
 	text-shadow: 1px 1px 2px #888;
-
+	padding: 5px;
 }
 
 //// TABS /////////////////////
@@ -81,6 +91,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#111111', end
 	width:100%;
 	border: none;
 	margin: 0px;
+	background-color: $gray;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
 }
 
 #homepage-tabs li {
@@ -92,7 +105,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#111111', end
 	width: 34%;
 }
 #homepage-tabs li a {
-	color: $themeColorMain;
+	color: $themeColorSecondary;
 	text-align: center;
 	border: none;
 	border-radius: 0px;
@@ -111,9 +124,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#111111', end
 	//text-shadow: 0px 1px 0px $white;
 	outline: none;
 	border: none;
-
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
 	//box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-	
+
+	/*
 background: #f4a453;
 background: -moz-linear-gradient(top, #f4a453 0%, #f48b22 99%);
 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f4a453), color-stop(99%,#f48b22));
@@ -122,7 +137,15 @@ background: -o-linear-gradient(top, #f4a453 0%,#f48b22 99%);
 background: -ms-linear-gradient(top, #f4a453 0%,#f48b22 99%);
 background: linear-gradient(to bottom, #f4a453 0%,#f48b22 99%);
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4a453', endColorstr='#f48b22',GradientType=0 );
-	
+	*/
+background: #437175;
+background: -moz-linear-gradient(top, #437175 0%, #3b5558 99%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#437175), color-stop(99%,#3b5558));
+background: -webkit-linear-gradient(top, #437175 0%,#3b5558 99%);
+background: -o-linear-gradient(top, #437175 0%,#3b5558 99%);
+background: -ms-linear-gradient(top, #437175 0%,#3b5558 99%);
+background: linear-gradient(to bottom, #437175 0%,#3b5558 99%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#437175', endColorstr='#3b5558',GradientType=0 );
 }
 
 #homepage-tabs .active {
@@ -133,11 +156,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4a453', end
 
 //// TAB CONTENT //////////////
 .homepage-tab-content {
-	overflow:hidden;
+	overflow:visible;
 }
 .homepage-tab-content .tab-pane h4 {
 	padding: 10px 0px 0px 50px;
-	color:$themeColorMain;
+	color:$themeColorSecondary;
 	font-size: 16px;
 }
 .help-text p {
@@ -190,6 +213,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4a453', end
 	background-color: $black;
 	color: $white;
 	border: none;
+	overflow-wrap: break-word;
+	overflow: hidden;
+
 }
 .thumbnail a {
 	min-height: 208px;
@@ -206,7 +232,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4a453', end
 	box-shadow: 0px 0px 2px $themeColorMain;
 }
 .btn-warning {
-
+/*
 background: #f4a453;
 background: -moz-linear-gradient(top, #f4a453 0%, #f48b22 99%);
 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f4a453), color-stop(99%,#f48b22));
@@ -215,10 +241,26 @@ background: -o-linear-gradient(top, #f4a453 0%,#f48b22 99%);
 background: -ms-linear-gradient(top, #f4a453 0%,#f48b22 99%);
 background: linear-gradient(to bottom, #f4a453 0%,#f48b22 99%);
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4a453', endColorstr='#f48b22',GradientType=0 );
+*/
+
+background: #437175;
+background: -moz-linear-gradient(top, #437175 0%, #3b5558 99%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#437175), color-stop(99%,#3b5558));
+background: -webkit-linear-gradient(top, #437175 0%,#3b5558 99%);
+background: -o-linear-gradient(top, #437175 0%,#3b5558 99%);
+background: -ms-linear-gradient(top, #437175 0%,#3b5558 99%);
+background: linear-gradient(to bottom, #437175 0%,#3b5558 99%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#437175', endColorstr='#3b5558',GradientType=0 );
+
+}
+
+.btn-warning:focus {
+	outline:none;
 }
 
 .btn-warning:hover {
 
+/*
 background: #f48b22;
 background: -moz-linear-gradient(top, #f48b22 1%, #f4a453 100%);
 background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#f48b22), color-stop(100%,#f4a453));
@@ -227,6 +269,16 @@ background: -o-linear-gradient(top, #f48b22 1%,#f4a453 100%);
 background: -ms-linear-gradient(top, #f48b22 1%,#f4a453 100%);
 background: linear-gradient(to bottom, #f48b22 1%,#f4a453 100%);
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f48b22', endColorstr='#f4a453',GradientType=0 );
+*/
+
+background: #3b5558;
+background: -moz-linear-gradient(top, #3b5558 1%, #437175 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#3b5558), color-stop(100%,#437175));
+background: -webkit-linear-gradient(top, #3b5558 1%,#437175 100%);
+background: -o-linear-gradient(top, #3b5558 1%,#437175 100%);
+background: -ms-linear-gradient(top, #3b5558 1%,#437175 100%);
+background: linear-gradient(to bottom, #3b5558 1%,#437175 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3b5558', endColorstr='#437175',GradientType=0 );
 }
 
 .btn-warning i {
@@ -235,7 +287,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f48b22', end
 
 
 .upload-tab-form h3 {
-	color: $themeColorMain;
+	color: $themeColorSecondary;
 	padding-left:0px;
 }
 .upload-tab-form {
@@ -244,6 +296,15 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f48b22', end
 .upload-tab-form input:focus {
 	box-shadow: 0px 0px 3px $themeColorMain;
 	border: solid 1px $themeColorMain;
+}
+.carousel-control {
+	top: 0%;
+}
+.left {
+	margin-left: -5px;
+}
+.right {
+	margin-right: -5px;
 }
 
 
@@ -286,4 +347,3 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f48b22', end
 
 
 
-@import "bootstrap-responsive";

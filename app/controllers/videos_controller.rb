@@ -3,10 +3,13 @@ class VideosController < ApplicationController
     @users = User.all
     @user = current_user
     @videos = Video.all
+    @per_page = 12
+    @per_row = 4
 
     #Initialize thumbnail results to show all videos
     @watch_videos = @videos
     @critique_videos = @videos
+    @upload_videos = []
     unless @user.nil?
       @upload_videos = @user.videos
     end
@@ -28,8 +31,6 @@ class VideosController < ApplicationController
         focus += point
         focus += '.'
       end
-    #render 'videos/index.html.erb'
-
     end
 
     #Set appropriate tab's thumbnails according to filter
@@ -46,13 +47,7 @@ class VideosController < ApplicationController
     @watch_videos = @watch_videos.sort_by{|video| video.created_at}.reverse
     @critique_videos = @critique_videos.sort_by{|video| video.rating}
     @upload_videos = @upload_videos.sort_by{|video| video.created_at}.reverse
-   # render 'videos/index.js.erb'
   end
-
-  def filter
-  end
-
-
 
 
   def create

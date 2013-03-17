@@ -1,14 +1,14 @@
 
 $(document).ready( function() {
-	$('#tab_1 a').click(function (e) {
+	$('#homepage-tabs a').click(function (e) {
 	  e.preventDefault();
 	  $(this).tab('show');
 	});
-	$('#tab_2 a').click(function (e) {
+	$('#homepage-tabs a').click(function (e) {
 	  e.preventDefault();
 	  $(this).tab('show');
 	});
-	$('#tab_3 a').click(function (e) {
+	$('#homepage-tabs a').click(function (e) {
 	  e.preventDefault();
 	  $(this).tab('show');
 	});
@@ -60,12 +60,20 @@ $(document).ready( function() {
 		    $.get(this.action, $(this).serialize(), null, "script");
 		    return false;
 		  });
-	$('.filter-dropdown-1').bind('multiselectclose', function(event, ui){
-		$.getScript('app/assets/views/layouts/index.js.erb');
-//		alert('here');
-		return false;
-	});
 
+	$('#myCarousel').on('slid', function() {
+	  var $this = $(this);
+
+	  $this.find('.carousel-control').show();
+
+	  if($('.carousel-inner .item:first').hasClass('active')) {
+	    $this.find('.left .carousel-control').hide();
+	  } else if($('.carousel-inner .item:last').hasClass('active')) {
+	    $this.find('.right .carousel-control').hide();
+	  }
+
+	});
+//	$('.carousel').height($('#thumbnail-row-0').height);
 });
 
 

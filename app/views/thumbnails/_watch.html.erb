@@ -1,4 +1,44 @@
-Watch: <br/>
-<% @watch_videos.each do |video| %>
-<%= video %> Created at: <%= video.created_at %> <br/>
-<% end %>
+<div id="myCarousel" class="carousel slide" data-interval="false">
+  <!-- Carousel items -->
+  <div class="carousel-inner">
+  	<% for i in 0 ... (@watch_videos.size.to_f/@per_page).ceil %>
+	    <div class="item <% if i == 0%><%= 'active' %><% end %>">
+
+
+
+	    <% for j in 0 ... (@per_page.to_f/@per_row).ceil %>
+<div class="row-fluid" id="thumbnail-row-<%= j %>">
+	<ul class="thumbnails">
+
+
+	    	<% for k in 0 ... @per_row %>
+	    		<% index = i * @per_page + j * @per_row + k %>
+	    			<% if index < @watch_videos.size %>
+	    				<% video = @watch_videos[index] %>
+
+
+<!-- Thumbnail -->
+
+	<li class="span3">
+	  <div class="thumbnail">
+	  	<%= link_to image_tag('http://img.youtube.com/vi/'+video.link.split('/')[3]+'/0.jpg'), video_show_path(:id => video.id) %>
+
+	    <p><%= video.description %>, <%=video.link%></p>
+	  </div>
+	</li>
+
+
+					<% end %>
+			<% end %>
+
+	</ul>
+</div>
+		<% end %>
+
+		</div>
+	<% end %>
+  </div>
+  <!-- Carousel nav -->
+  <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+  <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+</div>

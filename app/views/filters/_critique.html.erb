@@ -1,6 +1,6 @@
 <div class="row-fluid">
 	<div class="span12 filter-dropdowns">
-		<%= form_tag( {:action => "filter"}, {:remote => true, :method => 'get', :id => "video-filters"}) do %>
+		<%= form_tag( videos_path, {:remote => true, :method => 'get', :id => "video-filters"}) do %>
 			<%= hidden_field_tag :tab, "critique" %>
 			<table>
 				<tr>

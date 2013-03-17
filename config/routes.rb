@@ -16,7 +16,7 @@ LoLCritique::Application.routes.draw do
 
 
   match '/g' => 'home#filter'
-  match '/videos/:id/show' => 'videos#show'
+  match '/videos/:id/show' => 'videos#show', :as => 'video_show'
   match '/critiques/:id/show' => 'critiques#show'
   match '' => 'videos#filter'
 end

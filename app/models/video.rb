@@ -5,7 +5,7 @@ class Video < ActiveRecord::Base
   belongs_to :user
 
   def self.search(champ,position,phase,focus)
-  	query_results = Video.find(:all, :conditions => ["champ LIKE ? AND position LIKE ? AND phase LIKE ?",champ,position,phase])
+  	query_results = where("champ LIKE ? AND position LIKE ? AND phase LIKE ?",champ,position,phase)
   	videos = Array.new
   	query_focus = focus.split('.')
   	query_results.each do |result|
